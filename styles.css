@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,400;1,700&family=Roboto:wght@300&display=swap");
+
+/* 
+
+  UNIVERSAL STYLING
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+section {
+  background-color: rgb(245, 245, 245);
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h1 span {
+  font-size: 72px;
+}
+
+.green {
+  color: #018f3f;
+}
+
+.container {
+  padding: 96px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* 
+
+  NAV
+
+*/
+
+nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100px;
+}
+
+.nav__logo--wrapper {
+  width: 58px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  margin: 0 20px;
+}
+
+.nav__link:last-of-type {
+  margin-left: 0;
+}
+
+.nav__link--anchor {
+  color: #018f3f;
+  font-weight: 700;
+}
+
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  bottom: -3px;
+  right: 0;
+  transition: all 0.3s ease;
+}
+
+.link__hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.link__hover-effect--green:after {
+  background-color: #013d1b;
+}
+
+.theme-change {
+  background: none;
+  border: none;
+}
+
+/* ADD BORDER FILL ANIMATION TO THEME-CHANGE__HOVER-EFFECT */
+.theme-change__hover-effect {
+  display: flex;
+  position: relative;
+}
+
+.theme-change__hover-effect::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 2px solid #013d1b;
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+.theme-change__hover-effect:hover::after {
+  visibility: visible;
+  cursor: pointer;
+}
+/* ADD BORDER FILL ANIMATION TO THEME-CHANGE__HOVER-EFFECT */
+
+
