@@ -21,8 +21,15 @@ section {
   background-color: rgb(245, 245, 245);
 }
 
+.section__title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
 .section__para {
   line-height: 1.5;
+  font-size: 20px;
 }
 
 img {
@@ -191,7 +198,7 @@ nav {
 
 header {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   translate: -50% -50%;
   width: 100%;
@@ -285,4 +292,115 @@ header {
   100% {
     transform: translateY(0);
   }
+}
+
+/* 
+
+  PROJECTS
+
+*/
+
+#projects .row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project {
+  margin: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* YOURE CREATING A BACKGROUND GLOW EFFECT */
+.project:hover::before {
+  content: '';
+  background: conic-gradient(#109f4f, #018339, #109f4f);
+  border-radius: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  visibility: visible;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  filter: blur(1.5rem)
+}
+
+.project__img--wrapper{
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 100%; 
+  max-width: 650px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 20px 60px 0 rgb(0, 0, 0);
+}
+
+.project__img {
+  transition: all 500ms ease;
+}
+
+.project__description {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 500ms ease; 
+}
+
+.project__description--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(10,10,10, 0.85);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.project__img--wrapper:hover .project__description {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.project__img--wrapper:hover .project__description--bg {
+  opacity: 1;
+}
+
+.project__img--wrapper:hover .project__img {
+  transform: scale(1.1);
+  filter: blur(5px)
+}
+
+.project__description--title {
+  margin: 0 24px;
+  font-size: 28px;
+}
+
+.project__description--subtitle {
+  margin-top: 4px;
+}
+
+.project__description--para {
+  margin: 20px 48px;
+  text-align: center;
+}
+
+.project__description--links {
+  margin-bottom: 40px;
+}
+
+.project__description--link {
+  color: white;
 }
