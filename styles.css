@@ -13,7 +13,7 @@
   font-family: "Cabin", sans-serif;
 }
 
-body {
+html {
   scroll-behavior: smooth;
 }
 
@@ -56,6 +56,10 @@ h1 span {
 
 .green {
   color: #018f3f;
+}
+
+.red {
+  color: #ff2f33;
 }
 
 .click {
@@ -291,6 +295,282 @@ header {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+/* 
+
+  LANDING MODAL
+
+*/
+
+.contact__modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 24px;
+  overflow: hidden;
+  z-index: 4;
+  transition: all 300ms ease;
+}
+
+.modal--open .contact__modal {
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 2px 16px 2px rgba(10, 10, 10, 0.4);
+}
+
+.modal--open .e-mail,
+.modal--open .landing__content,
+.modal--open .scroll,
+.modal--open .scroll__icon {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 300ms ease;
+}
+
+.modal--close .e-mail,
+.modal--close .landing__content,
+.modal--close .scroll,
+.modal--close .scroll__icon {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease;
+}
+
+.about-me {
+  position: absolute;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  transition: all 300ms ease;
+}
+
+.about-me__content {
+  margin-left: 40px;
+}
+
+.modal--open .about-me {
+  left: 0;
+}
+
+.about-me__title {
+  margin: 32px 0 8px;
+}
+
+.about-me__subtitle {
+  margin-bottom: 8px;
+}
+
+.about-me__para {
+  padding-right: 80px;
+}
+
+.languages {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 8px 20px;
+}
+
+.language {
+  width: 25%;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.language__img--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language__img {
+  width: 100%;
+  max-width: 100px;
+  transition: all 300ms ease;
+  z-index: 20;
+}
+
+.language__img--caption {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  font-size: 14px;
+  transition: all 300ms ease;
+}
+
+.language:hover {
+  filter: brightness(85%);
+  transform: scale(0.95);
+}
+
+.language:hover .language__img--caption {
+  transform: scale(1);
+}
+
+.contact__form--wrapper {
+  position: relative;
+  right: -100%;
+  width: 50%;
+  height: 100%;
+  background-color: #013d1b;
+  transition: all 300ms ease;
+}
+
+.modal--open .contact__form--wrapper {
+  right: -50%;
+}
+
+.contact__form--title,
+.contact__form--subtitle {
+  color: #f0f0f0;
+  padding: 0 40px;
+}
+
+.contact__form--title {
+  margin: 32px 0 8px;
+}
+
+.contact__form--subtitle {
+  margin-bottom: 8px;
+}
+
+#contact__form {
+  width: 100%;
+  height: 100;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px 40px;
+}
+
+#contact__form:first-child {
+  margin-top: 32px;
+}
+
+#contact__form label,
+#contact__form input,
+#contact__form textarea,
+.close__modal {
+  color: #f0f0f0;
+}
+
+#contact__form input,
+#contact__form textarea {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #f0f0f0;
+  background-color: #013d1b;
+  transition: all 300ms ease;
+}
+
+#contact__form input:focus,
+#contact__form textarea:focus {
+  border: none;
+  border-bottom: 2px solid #109f4f;
+}
+
+#contact__form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+#contact__form textarea {
+  margin-bottom: 24px;
+  resize: vertical;
+}
+
+#contact__form input {
+  height: 28px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.contact__button {
+  width: 50%;
+  max-width: 100px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.close__modal {
+  position: absolute;
+  right: -99%;
+  top: 2%;
+  border: none;
+  background: none;
+  transition: all 300ms ease;
+  z-index: 2;
+}
+
+.fa-circle-xmark {
+  width: 16px;
+  height: 16px;
+}
+
+.modal--open .close__modal {
+  right: 1%;
+  top: 2%;
+}
+
+.modal__overlay {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.modal__overlay--visible {
+  z-index: 1;
+}
+
+.modal__overlay--loading {
+  background-color: #013d1b;
+  font-size: 80px;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 24px;
+  text-align: center;
+} 
+
+.fa-rotate {
+  animation: 1s spin linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

@@ -10,6 +10,17 @@
       src="https://kit.fontawesome.com/2e872fc204.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "fqnaOoQNF3xQk09Hy",
+        });
+      })();
+    </script>
   </head>
   <body>
     <section id="landing">
@@ -37,6 +48,7 @@
               <a
                 href="#contact"
                 class="nav__link--anchor link__hover-effect link__hover-effect--green"
+                onclick="openModal()"
                 >Contact</a
               >
             </li>
@@ -82,8 +94,98 @@
             ></a>
           </div>
         </div>
+        <div class="contact__modal">
+          <div class="about-me">
+            <div class="about-me__content">
+              <h3 class="about-me__title green">About Me</h3>
+              <h4 class="about-me__subtitle">Frontend Software Engineer.</h4>
+              <p class="about-me__para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi voluptatem eaque temporibus dignissimos sapiente
+                cupiditate natus est ipsum dolorum enim quos culpa beatae
+                eveniet praesentium maxime doloribus saepe, non aperiam!
+              </p>
+            </div>
+            <div class="languages">
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+                    alt="HTML Logo"
+                    class="language__img"
+                  />
+                  <figcaption class="language__img--caption">HTML</figcaption>
+                </figure>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                    alt="CSS Logo"
+                    class="language__img"
+                  />
+                  <figcaption class="language__img--caption">CSS</figcaption>
+                </figure>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                    alt="JavaScript logo"
+                    class="language__img"
+                  />
+                  <figcaption class="language__img--caption">
+                    JavaScript
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                    alt="React Logo"
+                    class="language__img"
+                  />
+                  <figcaption class="language__img--caption">React</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="contact__form--wrapper">
+            <h3 class="contact__form--title">Message Me!</h3>
+            <h4 class="contact__form--subtitle">
+              I'm currently open to new oppotunities!
+            </h4>
+            <form onsubmit="contact(event)" id="contact__form">
+              <label for="name"><span class="red">*</span>Name:</label>
+              <input id="name" name="user_name" type="text" required />
+              <label for="email"><span class="red">*</span>Email:</label>
+              <input id="email" name="user_email" type="email" required />
+              <label for="message"><span class="red">*</span>Message:</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                cols="2"
+                required
+              ></textarea>
+              <button class="contact__button click">Send</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+              Message Successfully Sent!<br />Thank You!
+            </div>
+          </div>
+          <button class="close__modal click" onclick="closeModal()">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+        </div>
       </header>
-      <button class="e-mail click"><i class="fa-solid fa-envelope"></i></button>
+      <a href="#" class="e-mail click" onclick="openModal()">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
@@ -199,26 +301,25 @@
             <a
               href="https://github.com/JCP-33"
               target="_blank"
-              class="footer__link link__hover-effect
-              link__hover-effect--black"
+              class="footer__link link__hover-effect link__hover-effect--black"
               >GitHub</a
             >
             <a
               href="https://www.linkedin.com/in/joshua-collinge-9315b61b3/"
               target="_blank"
-              class="footer__link link__hover-effect
-              link__hover-effect--black"
+              class="footer__link link__hover-effect link__hover-effect--black"
               >LinkedIn</a
             >
             <a
-              href="mailto:joshuacody12@gmail.com"
-              target="_blank"
-              class="footer__link link__hover-effect
-              link__hover-effect--black"
-              >Email</a
+              href="#landing"
+              class="footer__link link__hover-effect link__hover-effect--black"
+              onclick="openModal()"
+              >Contact</a
             >
-            <a href="assets/Resume.pdf" target="_blank" class="footer__link link__hover-effect
-              link__hover-effect--black"
+            <a
+              href="assets/Resume.pdf"
+              target="_blank"
+              class="footer__link link__hover-effect link__hover-effect--black"
               >Resume</a
             >
           </div>
