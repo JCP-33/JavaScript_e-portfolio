@@ -92,6 +92,7 @@ h1 span {
 
 .nav__container {
   background-color: rgb(235, 235, 235);
+  z-index: 1;
 }
 
 nav {
@@ -184,6 +185,52 @@ nav {
 }
 /* ADD BORDER FILL ANIMATION TO THEME-CHANGE__HOVER-EFFECT */
 
+.dark-mode .green {
+  color: #3ccd33;
+}
+
+.dark-mode .social__link {
+  background-color: #3ccd33;
+  color: #2c2c2c;
+}
+
+.dark-mode .nav__logo,
+.dark-mode .footer__logo {
+  filter: invert();
+}
+
+.dark-mode .link__hover-effect--green:after,
+.dark-mode .link__hover-effect--black:after,
+.dark-mode .e-mail,
+.dark-mode .scroll__icon::after {
+  background: white;
+  color: black;
+}
+
+.dark-mode .theme-change__hover-effect::after,
+.scroll__icon {
+  border-color: white;
+}
+
+.dark-mode .scroll__icon {
+  border: 2px solid white;
+}
+
+.dark-mode .nav__container,
+.dark-mode section,
+.dark-mode footer,
+.dark-mode .about-me {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.dark-mode .nav__link,
+.dark-mode .nav__link--anchor,
+.dark-mode .theme-change,
+.dark-mode .footer__link {
+  color: white;
+}
+
 /* 
 
   LANDING
@@ -238,7 +285,7 @@ header {
 }
 
 .e-mail {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   right: 5%;
   border: none;
@@ -251,6 +298,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 20;
 }
 
 .scroll {
@@ -329,7 +377,8 @@ header {
 .modal--open .e-mail,
 .modal--open .landing__content,
 .modal--open .scroll,
-.modal--open .scroll__icon {
+.modal--open .scroll__icon,
+.modal--open .shape {
   opacity: 0;
   transform: scale(0);
   transition: all 300ms ease;
@@ -338,10 +387,13 @@ header {
 .modal--close .e-mail,
 .modal--close .landing__content,
 .modal--close .scroll,
-.modal--close .scroll__icon {
+.modal--close .scroll__icon,
+.modal--close .shape {
   opacity: 1;
   transform: scale(1);
-  transition: all 300ms ease;
+  transition:
+    opacity 500ms ease 200ms,
+    scale 500ms ease 200ms;
 }
 
 .about-me {
@@ -556,7 +608,7 @@ header {
   font-weight: 700;
   padding: 24px;
   text-align: center;
-} 
+}
 
 .fa-rotate {
   animation: 1s spin linear infinite;
