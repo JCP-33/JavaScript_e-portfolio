@@ -185,6 +185,12 @@ nav {
 }
 /* ADD BORDER FILL ANIMATION TO THEME-CHANGE__HOVER-EFFECT */
 
+/* 
+
+  DARK MODE
+
+*/
+
 .dark-mode .green {
   color: #3ccd33;
 }
@@ -397,7 +403,7 @@ header {
 }
 
 .about-me {
-  position: absolute;
+  position: relative;
   left: -100%;
   width: 50%;
   height: 100%;
@@ -483,7 +489,7 @@ header {
 }
 
 .modal--open .contact__form--wrapper {
-  right: -50%;
+  right: 0;
 }
 
 .contact__form--title,
@@ -782,4 +788,149 @@ footer .container {
 
 .footer__copyright {
   margin: 24px 0 40px;
+}
+
+/* 
+
+  MEDIA TAGS
+
+*/
+
+/* SMALL PHONES, TABLETS, LARGE PHONES */
+@media (max-width: 900px) {
+  header,
+  .landing__content,
+  .scroll__icon {
+    margin: 0 auto;
+  }
+
+  .landing__content {
+    align-items: center;
+  }
+
+  .landing__description {
+    text-align: center;
+  }
+
+  .social__link {
+    margin: 0 8px;
+  }
+
+  .project__img--wrapper {
+    max-width: 550px;
+  }
+
+  .contact__modal {
+    max-width: 698px;
+  }
+
+  #contact__form input {
+    height: 24px;
+  }
+
+  #contact__form textarea {
+    height: 48px;
+  }
+}
+
+
+/* SMART PHONES, TABLETS, LARGE PHONES */
+@media (max-width: 720px) {
+  .e-mail {
+    width: 40px;
+    font-size: 20px;
+  }
+  .project__img--wrapper {
+    max-width: 450px;
+  }
+}
+
+/* SMART PHONES, SMALL PHONES */
+@media (max-width: 600px) {
+  .e-mail {
+    width: 40px;
+    font-size: 20px;
+  }
+
+  .contact__modal {
+    top: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  .about-me,
+  .contact__form--wrapper {
+    width: 100%;
+  }
+
+  .about-me__title,
+  .contact__form--title {
+    font-size: 16px;
+  }
+
+  .about-me__subtitle,
+  .contact__form--subtitle {
+    font-size: 14px;
+  }
+
+  .about-me__para {
+    font-size: 14px;
+  }
+
+  .language {
+    width: 15%;
+  }
+
+  #contact__form input {
+    height: 20px;
+  }
+
+  #contact__form textarea {
+    height: 20px;
+  }
+
+  .contact__button {
+    align-self: center;
+  }
+
+  .project__img--wrapper {
+    max-width: 390px;
+  }
+
+  .project__description--title {
+    font-size: 20px;
+    margin-top: 36px;
+  }
+
+  .project__description--para {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .project__description--link {
+    font-size: 28px;
+    margin: 0 12px;
+  }
+
+  .footer__links {
+    justify-content: space-around;
+  }
+}
+
+
+/* SMALL PHONES */
+@media (max-width: 560px) {
+  h1,
+  h1 .green {
+    font-size: 32px;
+  }
+
+  .section__para {
+    font-size: 16px;
+  }
+
+  .contact__modal {
+    top: -30%;
+  }
 }
